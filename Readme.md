@@ -55,3 +55,20 @@ pip freeze > requirements.txt
 ```
 pip install -r .\requirements.txt
 ```
+
+# Pyinstaller
+
+## Install
+```
+pip install pyinstaller
+```
+
+## Create .exe
+```
+pyinstaller your_program.py
+```
+
+## Create .exe in one file
+```
+pyinstaller --onefile your_program.py
+```
