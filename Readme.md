@@ -1,7 +1,7 @@
-# Python ver :-)
+# Python ver :-
 
 ```
-python 3.10.9 (64-bit)
+python 3.10.11 (64-bit)
 ```
 
 ## Install virtualenv
@@ -54,6 +54,12 @@ pip freeze > requirements.txt
 
 ```
 pip install -r .\requirements.txt
+```
+
+## Start a project 
+
+```
+python Main.py
 ```
 
 # Pyinstaller
