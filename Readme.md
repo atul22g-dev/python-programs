@@ -31,11 +31,7 @@ y
 ## Activate virtualenv
 
 ```
-cd .\.venv\Scripts\
-```
-
-```
- .\activate
+.\.venv\Scripts\Activate.ps1
 ```
 
 ## Diactivate virtualenv
