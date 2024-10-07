@@ -13,7 +13,7 @@ pip install virtualenv
 ## Initial virtualenv
 
 ```
-virtualenv project_name
+virtualenv .venv
 ```
 
 ## Before Activate virtualenv
@@ -31,7 +31,7 @@ y
 ## Activate virtualenv
 
 ```
-cd .\Scripts\
+cd .\.venv\Scripts\
 ```
 
 ```
