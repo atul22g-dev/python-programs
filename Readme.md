@@ -70,7 +70,7 @@ pip install -r .\requirements.txt
 
 ## Start a project 
 ```
-python Main.py
+python main.py
 ```
 
 # Pyinstaller
@@ -88,3 +88,4 @@ pyinstaller your_program.py
 ```
 pyinstaller --onefile your_program.py
 ```
+
