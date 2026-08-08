@@ -1,5 +1,5 @@
 # =====================================================================
-# Python Projects — single source of truth for setup & dependencies
+# Python Programs — single source of truth for setup & dependencies
 # ---------------------------------------------------------------------
 # Install everything (one command):
 #     uv sync

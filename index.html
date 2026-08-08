@@ -6,9 +6,9 @@
     <meta name="theme-color" content="#070b18" />
     <meta
       name="description"
-      content="A curated collection of Python mini-projects — games, turtle art, festival animations, utilities, security tools and computer vision experiments. One command to install and run."
+      content="A curated collection of Python mini-programs — games, turtle art, festival animations, utilities, security tools and computer vision experiments. One command to install and run."
     />
-    <title>Python Projects Showcase</title>
+    <title>Python Programs Showcase</title>
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐍</text></svg>"
@@ -28,10 +28,10 @@
       <div class="nav-inner">
         <a class="brand" href="#top" aria-label="Back to top">
           <span class="brand-mark">🐍</span>
-          <span class="brand-name">Python Projects</span>
+          <span class="brand-name">Python Programs</span>
         </a>
         <div class="nav-links" id="nav-links">
-          <a href="#projects">Projects</a>
+          <a href="#projects">Programs</a>
           <a href="#setup">Installation</a>
         </div>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -43,14 +43,14 @@
     <!-- Hero -->
     <header id="top">
       <div class="badge">🐍 Python 3.10 · Curated Collection</div>
-      <h1>Python Projects <span class="grad">Showcase</span></h1>
+      <h1>Python Programs <span class="grad">Showcase</span></h1>
       <p class="sub">
-        Every project in this repo, one preview page — games, turtle art, festival
+        Every program in this repo, one preview page — games, turtle art, festival
         animations, utilities, security tools and computer vision experiments. Click
         any card for details and the run command.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#projects">Browse Projects</a>
+        <a class="btn btn-primary" href="#projects">Browse Programs</a>
         <a class="btn btn-ghost" href="#setup">Installation Guide</a>
       </div>
       <div class="stats" id="stats"></div>
@@ -75,7 +75,7 @@
           <input
             id="search-input"
             type="text"
-            placeholder="Search projects, descriptions, dependencies…"
+            placeholder="Search programs, descriptions, dependencies…"
             autocomplete="off"
           />
         </label>
@@ -88,7 +88,7 @@
       <div id="empty">
         <p style="font-size: 2rem; margin-bottom: 10px">🔍</p>
         <p>
-          No projects match your search. Try a different keyword or clear the
+          No programs match your search. Try a different keyword or clear the
           filters.
         </p>
       </div>
@@ -102,7 +102,7 @@
         <p class="section-sub">
           The whole repo shares a single environment — <code>uv</code> finds the
           root <code>pyproject.toml</code> from any subfolder, so there's no
-          per-project setup
+          per-program setup
         </p>
       </div>
 
@@ -164,7 +164,7 @@
               <h3>Install everything</h3>
               <p>
                 <code>uv sync</code> creates a virtualenv and installs every
-                dependency for every project in one go:
+                dependency for every program in one go:
               </p>
               <div class="code-block">
                 <code>uv sync</code>
@@ -175,7 +175,7 @@
           <article class="step reveal">
             <span class="step-num">3</span>
             <div class="step-body">
-              <h3>Run any project</h3>
+              <h3>Run any program</h3>
               <p>
                 Missing dependencies auto-install on first run — this one command
                 is a complete setup + run:
@@ -194,11 +194,11 @@
             <ul>
               <li>
                 Run <code>uv run run-project</code> with no arguments for an
-                interactive project picker, or
-                <code>uv run run-project --list</code> to see every project.
+                interactive program picker, or
+                <code>uv run run-project --list</code> to see every program.
               </li>
               <li>
-                Prefer classic per-project runs?
+                Prefer classic per-program runs?
                 <code>cd "Games/Snake Game" &amp;&amp; uv run python main.py</code>
                 — uv auto-installs deps the first time.
               </li>
@@ -271,7 +271,7 @@
             <div class="step-body">
               <h3>Install dependencies</h3>
               <p>
-                Install what the projects you want need — or freeze an existing
+                Install what the programs you want need — or freeze an existing
                 environment with <code>pip freeze &gt; requirements.txt</code> and
                 install from that:
               </p>
@@ -284,8 +284,8 @@
           <article class="step reveal">
             <span class="step-num">5</span>
             <div class="step-body">
-              <h3>Run a project</h3>
-              <p>From inside the project folder:</p>
+              <h3>Run a program</h3>
+              <p>From inside the program folder:</p>
               <div class="code-block">
                 <code>cd "Games/Snake Game" &amp;&amp; python main.py</code>
                 <button class="copy-btn" data-copy='cd "Games/Snake Game" && python main.py'>Copy</button>
@@ -339,7 +339,7 @@
             <span class="step-num">2</span>
             <div class="step-body">
               <h3>Build the executable</h3>
-              <p>Run it from the project folder, pointing at the main file:</p>
+              <p>Run it from the program folder, pointing at the main file:</p>
               <div class="code-block">
                 <code>pyinstaller your_program.py</code>
                 <button class="copy-btn" data-copy="pyinstaller your_program.py">Copy</button>
@@ -380,7 +380,7 @@
         <div class="footer-brand">
           <a class="brand" href="#top">
             <span class="brand-mark">🐍</span>
-            <span class="brand-name">Python Projects</span>
+            <span class="brand-name">Python Programs</span>
           </a>
           <p>
             A curated Python playground — games, turtle art, festival animations,
@@ -389,13 +389,13 @@
           </p>
         </div>
         <div class="footer-links">
-          <a href="#projects">Browse projects</a>
+          <a href="#projects">Browse programs</a>
           <a href="#setup">Installation guide</a>
           <a href="#top">Back to top ↑</a>
         </div>
       </div>
       <div class="footer-bar">
-        Run any project in one command — deps install automatically:
+        Run any program in one command — deps install automatically:
         <code>uv run run-project "Snake Game"</code>
       </div>
     </footer>

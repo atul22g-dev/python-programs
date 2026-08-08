@@ -245,7 +245,7 @@ function renderStats() {
   const cats = new Set(PROJECTS.map(p => p.cat));
   const hasDeps = PROJECTS.filter(p => p.deps.length).length;
   $("stats").innerHTML = `
-    <div class="stat"><b data-count="${PROJECTS.length}">0</b><span>Projects</span></div>
+    <div class="stat"><b data-count="${PROJECTS.length}">0</b><span>Programs</span></div>
     <div class="stat"><b data-count="${cats.size}">0</b><span>Categories</span></div>
     <div class="stat"><b data-count="${hasDeps}">0</b><span>Use libraries</span></div>
     <div class="stat"><b>3.10+</b><span>Python target</span></div>`;
