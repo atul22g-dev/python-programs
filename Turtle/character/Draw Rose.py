@@ -1,4 +1,3 @@
-from turtle import *
 import turtle as tur
 
 

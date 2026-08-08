@@ -1,5 +1,4 @@
 import turtle as tu
-import cv2
 from svgpathtools import svg2paths2
 from svg.path import parse_path
 from tqdm import tqdm
@@ -78,7 +77,6 @@ class sketch_from_svg:
             #print(col)
             self.pen.color(col)
             self.pen.begin_fill()
-            next = 0
             for coord in path:
                 #for coord in path_col:
                 x,y = coord

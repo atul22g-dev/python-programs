@@ -1,4 +1,3 @@
-from turtle import *
 import turtle
 turtle.bgcolor('black')
 turtle.pencolor('red')

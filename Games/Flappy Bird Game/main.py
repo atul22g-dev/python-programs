@@ -64,7 +64,6 @@ def mainGame():
 
     playerVelY = -9
     playerMaxVelY = 10
-    playerMinVelY = -8
     playerAccY = 1
 
     playerFlapAccv = -8 # velocity while flapping

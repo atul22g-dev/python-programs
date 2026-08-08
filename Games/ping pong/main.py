@@ -2,7 +2,6 @@
 import pygame
 import sys
 import random
-import time
 
 # Initialising the pygame
 pygame.init()
@@ -56,7 +55,6 @@ def ball_movement():
 
 # function for the movement of player1
 def player1_movement():
-    global player1_speed
     player1.y += player1_speed
     if player1.top <= 0:
         player1.top = 0
@@ -66,13 +64,10 @@ def player1_movement():
 
 # function for the movement of player2
 def player2_movement():
-    global player2_speed
     if player2.top < ball.y:
         player2.top += player2_speed
     if player2.bottom > ball.y:
         player2.bottom -= player2_speed
-    if player2.top <= 0:
-        player2_top = 0
     if player2.bottom >= height:
         player2.bottom = height
 

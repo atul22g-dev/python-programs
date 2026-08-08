@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070b18" />
+    <meta
+      name="description"
+      content="A curated collection of Python mini-projects — games, turtle art, festival animations, utilities, security tools and computer vision experiments. One command to install and run."
+    />
+    <title>Python Projects Showcase</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐍</text></svg>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Animated aurora background -->
+    <div class="aurora" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Back to top">
+          <span class="brand-mark">🐍</span>
+          <span class="brand-name">Python Projects</span>
+        </a>
+        <div class="nav-links" id="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#setup">Installation</a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header id="top">
+      <div class="badge">🐍 Python 3.10 · Curated Collection</div>
+      <h1>Python Projects <span class="grad">Showcase</span></h1>
+      <p class="sub">
+        Every project in this repo, one preview page — games, turtle art, festival
+        animations, utilities, security tools and computer vision experiments. Click
+        any card for details and the run command.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">Browse Projects</a>
+        <a class="btn btn-ghost" href="#setup">Installation Guide</a>
+      </div>
+      <div class="stats" id="stats"></div>
+    </header>
+
+    <!-- Sticky search + category filters -->
+    <div class="controls">
+      <div class="controls-inner">
+        <label class="search" for="search-input">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Search projects, descriptions, dependencies…"
+            autocomplete="off"
+          />
+        </label>
+        <div class="chips" id="chips"></div>
+      </div>
+    </div>
+
+    <main id="projects">
+      <section class="grid" id="grid" aria-live="polite"></section>
+      <div id="empty">
+        <p style="font-size: 2rem; margin-bottom: 10px">🔍</p>
+        <p>
+          No projects match your search. Try a different keyword or clear the
+          filters.
+        </p>
+      </div>
+    </main>
+
+    <!-- Installation docs -->
+    <section class="setup" id="setup">
+      <div class="section-head reveal">
+        <p class="eyebrow">⚙️ Installation</p>
+        <h2>Up and running in <span class="grad">one command</span></h2>
+        <p class="section-sub">
+          The whole repo shares a single environment — <code>uv</code> finds the
+          root <code>pyproject.toml</code> from any subfolder, so there's no
+          per-project setup
+        </p>
+      </div>
+
+      <div class="tabs reveal" role="tablist" aria-label="Installation methods">
+        <button
+          class="tab active"
+          id="tab-btn-quick"
+          data-tab="quick"
+          role="tab"
+          aria-selected="true"
+          aria-controls="tab-quick"
+        >
+          ⚡ Quick Start (uv)
+        </button>
+        <button
+          class="tab"
+          id="tab-btn-venv"
+          data-tab="venv"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tab-venv"
+        >
+          🐍 Virtualenv
+        </button>
+        <button
+          class="tab"
+          id="tab-btn-exe"
+          data-tab="exe"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tab-exe"
+        >
+          📦 Build an .exe
+        </button>
+      </div>
+
+      <!-- Quick Start (uv) -->
+      <div
+        class="tab-panel active"
+        id="tab-quick"
+        role="tabpanel"
+        aria-labelledby="tab-btn-quick"
+      >
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-num">1</span>
+            <div class="step-body">
+              <h3>Install uv</h3>
+              <p>uv is the modern Python package &amp; project manager. Install it with pip:</p>
+              <div class="code-block">
+                <code>pip install uv</code>
+                <button class="copy-btn" data-copy="pip install uv">Copy</button>
+              </div>
+            </div>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">2</span>
+            <div class="step-body">
+              <h3>Install everything</h3>
+              <p>
+                <code>uv sync</code> creates a virtualenv and installs every
+                dependency for every project in one go:
+              </p>
+              <div class="code-block">
+                <code>uv sync</code>
+                <button class="copy-btn" data-copy="uv sync">Copy</button>
+              </div>
+            </div>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">3</span>
+            <div class="step-body">
+              <h3>Run any project</h3>
+              <p>
+                Missing dependencies auto-install on first run — this one command
+                is a complete setup + run:
+              </p>
+              <div class="code-block">
+                <code>uv run run-project "Snake Game"</code>
+                <button class="copy-btn" data-copy='uv run run-project "Snake Game"'>Copy</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="callout reveal">
+          <span class="callout-icon">💡</span>
+          <div>
+            <p><strong>Tips</strong></p>
+            <ul>
+              <li>
+                Run <code>uv run run-project</code> with no arguments for an
+                interactive project picker, or
+                <code>uv run run-project --list</code> to see every project.
+              </li>
+              <li>
+                Prefer classic per-project runs?
+                <code>cd "Games/Snake Game" &amp;&amp; uv run python main.py</code>
+                — uv auto-installs deps the first time.
+              </li>
+              <li>
+                <strong>sketchpy</strong> (Iron Man RDJ) is intentionally not in
+                <code>pyproject.toml</code> — it wrongly lists the stdlib
+                <code>turtle</code> module as a PyPI dependency. The runner
+                installs it with <code>pip install --no-deps sketchpy</code>.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Virtualenv -->
+      <div
+        class="tab-panel"
+        id="tab-venv"
+        role="tabpanel"
+        aria-labelledby="tab-btn-venv"
+        hidden
+      >
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-num">1</span>
+            <div class="step-body">
+              <h3>Install virtualenv</h3>
+              <p>Classic approach, if you prefer pip over uv:</p>
+              <div class="code-block">
+                <code>pip install virtualenv</code>
+                <button class="copy-btn" data-copy="pip install virtualenv">Copy</button>
+              </div>
+            </div>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">2</span>
+            <div class="step-body">
+              <h3>Create the environment</h3>
+              <p>One shared virtualenv for the whole repo:</p>
+              <div class="code-block">
+                <code>virtualenv .venv</code>
+                <button class="copy-btn" data-copy="virtualenv .venv">Copy</button>
+              </div>
+            </div>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">3</span>
+            <div class="step-body">
+              <h3>Activate it</h3>
+              <div class="code-grid">
+                <div>
+                  <p class="code-label">Windows (PowerShell)</p>
+                  <div class="code-block">
+                    <code>.\\.venv\\Scripts\\Activate.ps1</code>
+                    <button class="copy-btn" data-copy=".\.venv\Scripts\Activate.ps1">Copy</button>
+                  </div>
+                </div>
+                <div>
+                  <p class="code-label">macOS / Linux</p>
+                  <div class="code-block">
+                    <code>source .venv/bin/activate</code>
+                    <button class="copy-btn" data-copy="source .venv/bin/activate">Copy</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">4</span>
+            <div class="step-body">
+              <h3>Install dependencies</h3>
+              <p>
+                Install what the projects you want need — or freeze an existing
+                environment with <code>pip freeze &gt; requirements.txt</code> and
+                install from that:
+              </p>
+              <div class="code-block">
+                <code>pip install pygame pandas opencv-python</code>
+                <button class="copy-btn" data-copy="pip install pygame pandas opencv-python">Copy</button>
+              </div>
+            </div>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">5</span>
+            <div class="step-body">
+              <h3>Run a project</h3>
+              <p>From inside the project folder:</p>
+              <div class="code-block">
+                <code>cd "Games/Snake Game" &amp;&amp; python main.py</code>
+                <button class="copy-btn" data-copy='cd "Games/Snake Game" && python main.py'>Copy</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="callout reveal">
+          <span class="callout-icon">💡</span>
+          <div>
+            <p><strong>Notes</strong></p>
+            <ul>
+              <li>
+                On Windows, PowerShell may need
+                <code>Set-ExecutionPolicy RemoteSigned</code> (answer
+                <code>y</code>) before activating a virtualenv.
+              </li>
+              <li>
+                Deactivate any time with <code>deactivate</code>.
+              </li>
+              <li>
+                Prefer the Quick Start tab — <code>uv sync</code> does steps 2–4
+                automatically.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- PyInstaller -->
+      <div
+        class="tab-panel"
+        id="tab-exe"
+        role="tabpanel"
+        aria-labelledby="tab-btn-exe"
+        hidden
+      >
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-num">1</span>
+            <div class="step-body">
+              <h3>Install PyInstaller</h3>
+              <p>Packages Python programs into standalone executables:</p>
+              <div class="code-block">
+                <code>pip install pyinstaller</code>
+                <button class="copy-btn" data-copy="pip install pyinstaller">Copy</button>
+              </div>
+            </div>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">2</span>
+            <div class="step-body">
+              <h3>Build the executable</h3>
+              <p>Run it from the project folder, pointing at the main file:</p>
+              <div class="code-block">
+                <code>pyinstaller your_program.py</code>
+                <button class="copy-btn" data-copy="pyinstaller your_program.py">Copy</button>
+              </div>
+            </div>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">3</span>
+            <div class="step-body">
+              <h3>Or build a single file</h3>
+              <p>Everything bundled into one <code>.exe</code>:</p>
+              <div class="code-block">
+                <code>pyinstaller --onefile your_program.py</code>
+                <button class="copy-btn" data-copy="pyinstaller --onefile your_program.py">Copy</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="callout reveal">
+          <span class="callout-icon">💡</span>
+          <div>
+            <p><strong>Notes</strong></p>
+            <ul>
+              <li>The executable lands in the <code>dist/</code> folder.</li>
+              <li>
+                Add <code>--windowed</code> for GUI apps so no console window
+                opens, and <code>--icon app.ico</code> for a custom icon.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a class="brand" href="#top">
+            <span class="brand-mark">🐍</span>
+            <span class="brand-name">Python Projects</span>
+          </a>
+          <p>
+            A curated Python playground — games, turtle art, festival animations,
+            utilities, security tools and computer-vision experiments, all
+            runnable with one command.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="#projects">Browse projects</a>
+          <a href="#setup">Installation guide</a>
+          <a href="#top">Back to top ↑</a>
+        </div>
+      </div>
+      <div class="footer-bar">
+        Run any project in one command — deps install automatically:
+        <code>uv run run-project "Snake Game"</code>
+      </div>
+    </footer>
+
+    <!-- Project detail modal -->
+    <div class="modal-backdrop" id="backdrop">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button class="close" id="modal-close" aria-label="Close">✕</button>
+        <div class="thumb" id="modal-thumb"></div>
+        <div class="modal-body">
+          <h2 id="modal-title"></h2>
+          <div class="cat-line" id="modal-cat"></div>
+          <p class="desc" id="modal-desc"></p>
+          <dl class="dl" id="modal-dl"></dl>
+          <div class="run-row">
+            <div class="run-box" id="modal-run"></div>
+            <button class="copy" id="modal-copy">Copy command</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

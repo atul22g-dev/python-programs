@@ -1,0 +1,69 @@
+# =====================================================================
+# Python Projects — single source of truth for setup & dependencies
+# ---------------------------------------------------------------------
+# Install everything (one command):
+#     uv sync
+#
+# Run any project, deps auto-installed, all in ONE command:
+#     uv run run-project              # interactive picker
+#     uv run run-project "Snake Game" # by name
+#     uv run run-project --list       # see every project
+#
+# Or the classic per-project run (uv auto-installs deps the first time):
+#     cd "Games/Snake Game" && uv run python main.py
+#
+# Works from any subfolder — uv finds this file by walking up.
+# =====================================================================
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-projects"
+version = "1.0.0"
+description = "Collection of Python mini-projects — games, turtle art, festival animations, utilities, security tools and computer vision experiments."
+readme = "Setup.md"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    # Games (Flappy Bird, Hangman, Ping Pong, Snake Game, Snake Game 2)
+    "pygame",
+
+    # Computer vision / sketches (Face Recognition, HanumanJi, Shiva Sketch)
+    # Pinned below 5: OpenCV 5 removed the classic CascadeClassifier API that
+    # Face Recognition uses (Haar cascade face detection).
+    "opencv-python>=4.10,<5",
+    "numpy",
+    "matplotlib",
+
+    # HanumanJi (SVG-to-turtle)
+    "svgpathtools",
+    "svg.path",
+    "tqdm",
+
+    # Iron Man (RDJ) portrait — sketchpy is intentionally NOT listed here.
+    # It declares the stdlib `turtle` module as a PyPI dependency, and the
+    # dummy `turtle` package was removed from PyPI, so uv can't resolve it.
+    # run_project.py installs sketchpy with --no-deps (turtle ships with
+    # Python itself) and then installs its real dependencies — geocoder,
+    # geopy, requests, Pillow, ... — from sketchpy's metadata.
+
+
+    # XLSX to CSV converter
+    "pandas",
+
+    # Password Cracker demo
+    "pyautogui",
+]
+
+[project.scripts]
+# One-command runner: installs missing deps, then runs any project
+# (see run_project.py). Usage: `uv run run-project "Snake Game"`
+run-project = "run_project:main"
+
+# One script for ALL projects: status check, or run them all one by one
+# (see run_all.py). Usage: `uv run run-all`
+run-all = "run_all:main"
+
+[tool.setuptools]
+py-modules = ["run_project", "run_all"]

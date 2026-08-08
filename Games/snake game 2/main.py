@@ -1,6 +1,5 @@
 # Importing the libraries codewithcurious.com
 import pygame #pip install pygame
-import time
 import random
 
 # Initializing the pygame
@@ -49,7 +48,6 @@ def message(msg, color):
 
 # Function for game loop
 def gameLoop():
-    game_over = False
     game_close = False
 
     x1 = width / 2
